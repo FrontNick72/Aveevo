@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Aveevo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src = "js/tabs.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var touch = $('.btn-verdict');
+      var menu = $('.verdict');     
+      $(touch).on('click', function(e) {
+          e.preventDefault();
+          menu.show();
+
+      });
+
+        var touch_mobile = $('.touch_menu') ;
+      var menu_mobile = $('.usluga');
+       
+      $(touch_mobile).on('click', function(e) {
+        e.preventDefault();
+        if ($(window).width() <= '1024'){
+          $(this).find('.usluga').slideToggle();
+          $(this).find('.link span').toggleClass('tr_down tr_up');
+        }
+      });
+
+        $(window).resize(function(){
+            var wid = $(window).width();
+            if(wid > 760 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+        
+    });
+  </script> 	
+</head>
+<body>
+    <aside id="nav">
+     <a href="#" class="logo">
+         <img src="img/logo.png" alt="logo">
+     </a>
+     <nav class="nav">
+            <ul class="list">
+                <li class="list__item title">Разделы сайта:</li>
+                <li class="list__item">
+                    <a href="#" class="link">
+                        <img src="img/icon/main.png" class="icon icon--home">
+                        <span class="txt">Главная</span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="link">
+                        <img src="img/icon/about.png" class="icon icon--home">
+                        <span class="txt">О компании</span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="link">
+                        <img src="img/icon/advant.png" class="icon icon--home">
+                        <span class="txt">Преимущества</span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="link">
+                        <img src="img/icon/goods.png" class="icon icon--home">
+                        <span class="txt">Товары</span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="link">
+                        <img src="img/icon/uslugi.png" class="icon icon--home">
+                        <span class="txt">Услуги</span>                        
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="link">
+                        <img src="img/icon/client.png" class="icon icon--home">
+                        <span class="txt">Доска клиентов</span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="link">
+                        <img src="img/icon/galler.png" class="icon icon--home">
+                        <span class="txt">Галерея</span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="link">
+                        <img src="img/icon/cup.png" class="icon icon--home">
+                        <span class="txt">Конкурсы</span>                        
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="link">
+                        <img src="img/icon/contact.png" class="icon icon--home">
+                        <span class="txt">Контакты</span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a class="link btn-verdict">
+                        Вердикт
+                    </a>
+                </li>
+            </ul>
+        </nav>   
+    </aside>
+      <header class="menu">
+        <div class="tabs">
+            <a href="#" class="link active">
+              <span class="title moder">На модерации</span>
+              <div class="clr"></div>
+            </a>           
+            <a href="#" class="link">
+              <span class="title public">Опубликованные</span>
+              <div class="clr"></div>
+            </a>
+            <a href="#" class="link">
+              <span class="title error">Отклонены</span>  
+              <div class="clr"></div>            
+            </a>
+            <a href="#" class="link">
+              <span class="title edit">Редактируемые</span> 
+              <div class="clr"></div>             
+            </a>
+            <div class="clr"></div>
+        </div>
+        <form action="index.html" method = "GET" class="filtres">
+          <div class="filtres__item">
+            <label for="cat-g" class = "label-item">
+              Категория товаров:
+            </label>
+            <select name="cat-g" id="cat-g" class="input select">
+              <option value="0">ВСЕ</option>
+              <option value="1">Boxing</option>
+            </select>
+          </div>
+
+          <div class="filtres__item">
+            <label for="cat-s" class = "label-item">
+              Категория услуг: 
+            </label>
+            <select name="cat-s" id="cat-s" class="input select">
+              <option value="0">ВСЕ</option>
+              <option value="1">Cleaning</option>
+            </select>
+          </div>
+
+          <div class="filtres__item">
+            <label for="num-pac" class = "label-item">
+              Номер бизнес пакета:
+            </label>
+            <select name="num-pac" id="num-pac" class="input select">
+              <option value="0">ВСЕ</option>
+              <option value="1">1</option>
+            </select>
+          </div>
+
+          <div class="filtres__item">
+            <label for="data" class = "label-item">
+              Дата публикации:
+            </label>
+            <input id="data" class="input select" name = "date" type="date" min="2012-01-01" max="2012-12-31" onchange="this.form.submit()">
+          </div>
+
+          <div class="filtres__item search">
+            <label for="search" class = "label-item">
+              Поиск
+            </label>
+            <input type="text" class = "input search" name = "name" id = "search" placeholder="...">
+          </div>
+
+        </form>
+      </header>
+      <div class="content">
+        <div class="parametr">
+          <div class="parametr__item">Название компании: <span class="name name--company">КАК С ИГОЛОЧКИ</span></div>
+          <div class="parametr__item">Пользователь: <span class="name name--user">Максим Максимович</span></div>
+          <div class="parametr__item">Время публикации: <span class="name name--time">2017-05-26 09:13:31</span></div>
+        </div>
+        <section class="verdict">
+          <h2 class="title">Вердикт</h2>
+          <form action="" class="verdict__form">
+            <div class="form__item left">
+              <label for="comment" class="signa">Комментарий:</label>
+              <textarea name="comment" id="comment" cols="30" class="comment"></textarea>
+            </div>
+            <div class="violations right">
+              <div class="form__item">
+                <label for="comment" class="signa">Нарушения:</label>
+                <select name="violations" id="violations" class="select">
+                  <option value="1">Продажа оружия</option>
+                  <option value="2">Наркоторговля</option>
+                </select>
+              </div>
+              <div class="form__item">
+                <textarea name="violations-comment" id="violationviolations-comments" cols="30" class="comment"></textarea>
+              </div>
+            </div>
+            <div class="clr"></div>
+            <div class="btns">
+              <button class="btn btn-yes">Опубликовать</button>
+              <button class="btn btn-no">Отклонить</button>
+            </div>
+            
+            
+
+          </form>
+        </section>
+      </div>
+
+	
+</body>
+</html>

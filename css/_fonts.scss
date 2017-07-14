@@ -1,0 +1,21 @@
+/* Шрифты */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@font-face {
+	font-family: 'Roboto-Regular';
+	font-style: normal;
+	src: local('Roboto-Regular'),
+	url('../fonts/Roboto-Regular.woff2') format('woff2'), 
+	url('../fonts/Roboto-Regular.woff') format('woff'),
+	url('../fonts/Roboto-Regular.ttf') format('ttf'),
+	url('../fonts/Roboto-Regular.eot') format('eot');
+}
+
+@font-face {
+	font-family: 'Roboto-Light';
+	font-style: normal;
+	src: local('Roboto-Light'),
+	url('../fonts/Roboto-Light.woff2') format('woff2'), 
+	url('../fonts/Roboto-Light.woff') format('woff'),
+	url('../fonts/Roboto-Light.ttf') format('ttf'),
+	url('../fonts/Roboto-Light.eot') format('eot');
+}
